@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+        .system{
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+        .table_header {
+            display: inline-block;
+        }     
+        .title{
+            width: 60px;
+            display: inline-block;
+            margin-left: 100px;
+        }
+        .table_list {
+            /* display: inline-block; */
+        }
+        .list{
+            width: 60px;
+            display: inline-block;
+            margin-left: 100px;
+        }
+        .choose{
+            position: fixed;
+            right: 50px;
+            bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="system">
+        <div class="table_header">
+            <div class="title">书籍id</div>
+            <div class="title">书籍名</div>
+            <div class="title">书籍进价</div>
+            <div class="title">销售价格</div>
+            <div class="title">入库数量</div>
+            <div class="title">入库时间</div>
+        </div>
+        #foreach($storge in $storgeList)
+
+        <div class="table_list">
+            <div class="list">${storge.book.bookID}</div>
+            <div class="list">${storge.book.bookName}</div>
+            <div class="list">${storge.storgePrice}</div>
+            <div class="list">${storge.book.price}</div>
+            <div class="list">${storge.number}</div>
+            <div class="list">${storge.storgeTime}</div>
+        </div>
+        #end
+        <div class="choose"> 
+            <a href="saleman_booksale_search.vm">查询</a>
+            <a href="SalesAddBooks.vm">添加</a>
+            <a href="">更新</a>
+        </div>
+       
+    </div>
+</body>
+</html>
